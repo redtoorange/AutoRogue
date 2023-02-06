@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://pu7248kg4f1q"]
+
+[ext_resource type="PackedScene" uid="uid://bomr1hq00ivfk" path="res://Swordsmen/Swordsmen.tscn" id="1_6wviy"]
+[ext_resource type="TileSet" uid="uid://blfufpfoa7emc" path="res://Art/DungeonTileset.tres" id="2_561g5"]
+[ext_resource type="Script" path="res://AutoRogue/Controllers/PlayerController/PlayerController.cs" id="3_1wmlf"]
+[ext_resource type="Script" path="res://AutoRogue/Controllers/PlayerController/DragController/DragController.cs" id="3_hsljh"]
+
+[node name="MainScene" type="Node2D"]
+metadata/_edit_vertical_guides_ = [160.0]
+
+[node name="Friendly" type="Node2D" parent="."]
+
+[node name="Swordsmen" parent="Friendly" instance=ExtResource("1_6wviy")]
+modulate = Color(0.490196, 1, 0.47451, 1)
+position = Vector2(120, 24)
+unitOwner = 1
+
+[node name="Swordsmen_2" parent="Friendly" instance=ExtResource("1_6wviy")]
+modulate = Color(0.490196, 1, 0.47451, 1)
+position = Vector2(120, 72)
+unitOwner = 1
+
+[node name="Swordsmen_3" parent="Friendly" instance=ExtResource("1_6wviy")]
+modulate = Color(0.490196, 1, 0.47451, 1)
+position = Vector2(120, 120)
+unitOwner = 1
+
+[node name="Enemy" type="Node2D" parent="."]
+
+[node name="Swordsmen" parent="Enemy" instance=ExtResource("1_6wviy")]
+modulate = Color(1, 0.388235, 0.341176, 1)
+position = Vector2(200, 24)
+
+[node name="Swordsmen_2" parent="Enemy" instance=ExtResource("1_6wviy")]
+modulate = Color(1, 0.388235, 0.341176, 1)
+position = Vector2(200, 72)
+
+[node name="Swordsmen_3" parent="Enemy" instance=ExtResource("1_6wviy")]
+modulate = Color(1, 0.388235, 0.341176, 1)
+position = Vector2(200, 120)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_561g5")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 1179648, 0, 1, 1245184, 0, 2, 1245184, 0, 3, 1245184, 0, 4, 1245184, 0, 5, 1245184, 0, 6, 1245184, 0, 7, 1245184, 0, 8, 1245184, 0, 9, 1245184, 0, 10, 1245184, 0, 11, 1245184, 0, 12, 1245184, 0, 13, 1245184, 0, 14, 1245184, 0, 15, 1245184, 0, 16, 1245184, 0, 17, 1245184, 0, 18, 1245184, 0, 19, 1310720, 0, 65555, 1310720, 1, 131091, 1310720, 1, 196627, 1310720, 1, 262163, 1310720, 1, 327699, 1310720, 1, 393235, 1310720, 1, 458771, 1310720, 1, 524307, 1310720, 2, 65536, 1179648, 1, 131072, 1179648, 1, 196608, 1179648, 1, 262144, 1179648, 1, 327680, 1179648, 1, 393216, 1179648, 1, 458752, 1179648, 1, 524288, 1179648, 2, 524289, 1245184, 2, 524290, 1245184, 2, 524291, 1245184, 2, 524292, 1245184, 2, 524293, 1245184, 2, 524294, 1245184, 2, 524295, 1245184, 2, 524296, 1245184, 2, 524297, 1245184, 2, 524298, 1245184, 2, 524299, 1245184, 2, 524300, 1245184, 2, 524301, 1245184, 2, 524303, 1245184, 2, 524304, 1245184, 2, 524305, 1245184, 2, 524306, 1245184, 2, 524302, 1245184, 2, 131081, 851968, 0, 262153, 851968, 0, 393225, 851968, 0, 196617, 851968, 0, 65545, 851968, 0, 327689, 851968, 0, 458761, 851968, 0)
+
+[node name="PlayerController" type="Node2D" parent="."]
+script = ExtResource("3_1wmlf")
+
+[node name="DragController" type="Node2D" parent="PlayerController"]
+script = ExtResource("3_hsljh")

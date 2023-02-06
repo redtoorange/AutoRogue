@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bomr1hq00ivfk"]
+
+[ext_resource type="Script" path="res://AutoRogue/Units/Swordsmen.cs" id="1_vhj43"]
+[ext_resource type="Texture2D" uid="uid://wo5v05k6b2un" path="res://Swordsmen/Swordsmen.tres" id="2_l6abr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ie561"]
+radius = 8.0
+
+[node name="Swordsmen" type="CharacterBody2D"]
+input_pickable = true
+script = ExtResource("1_vhj43")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_l6abr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ie561")
